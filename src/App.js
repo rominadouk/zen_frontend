@@ -1,8 +1,9 @@
-import './App.css';
+import Affirmation from './components/Affirmation';
 
 const App = () => {
   return (
     <div>
+      <Affirmation />
 
     </div>
   );
