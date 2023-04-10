@@ -1,4 +1,4 @@
-const SelfCare = () => {
+const Selfcare = () => {
     return ( 
         <>
         <h1>Self-Care Page</h1>
@@ -6,4 +6,4 @@ const SelfCare = () => {
      );
 }
  
-export default SelfCare;
+export default Selfcare;

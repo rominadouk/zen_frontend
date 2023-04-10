@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap'
+import './Affirmation.css'
 
 
 const Affirmation = () => {
@@ -64,8 +66,15 @@ const Affirmation = () => {
 
     return ( 
         <>
-        <button onClick={randomAffirmation}>Affirmation Test</button>
-        <p>{dailyaffirmation}</p>
+        <Container className='affirmation-container text-center'>
+          <Row>
+            <Col>
+              {/* <button onClick={randomAffirmation}>Affirmation Test</button> */}
+              <h2>Today's Affirmation</h2>
+              <p className='mt-3'>{dailyaffirmation}</p>
+            </Col>
+          </Row>
+        </Container>
         </>
      );
 }

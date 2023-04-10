@@ -17,7 +17,7 @@ const NavBar = () => {
                 <Row>
                     <Col>
                     <PersonHeart className="icon"/>
-                        <p>Self Care</p>
+                        <Link to='/selfcare' className='nav-link'>Self Care</Link>
                     </Col>
                     <Col>
                     <HouseDoorFill className='icon'/>
@@ -27,7 +27,7 @@ const NavBar = () => {
                     <Col>
                     <Journal className="icon"/>
                     <br/>
-                        <Link to='newpost' className="nav-link">Journal</Link>
+                        <Link to='/journals' className="nav-link">Journal</Link>
                     </Col>
                 </Row>
             </Container>
