@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap'
 import './NavBar.css'
+import {HouseDoorFill, Journal, PersonHeart } from 'react-bootstrap-icons'
 
 const NavBar = () => {
     return ( 
@@ -15,16 +16,22 @@ const NavBar = () => {
             <Container className="text-center">
                 <Row>
                     <Col>
+                    <PersonHeart className="icon"/>
                         <p>Self Care</p>
                     </Col>
                     <Col>
-                        <Link to='/'>Home</Link>
+                    <HouseDoorFill className='icon'/>
+                    <br/>
+                        <Link to='/' className="nav-link">Home</Link>
                     </Col>
                     <Col>
-                        <Link to='newpost'>Journal</Link>
+                    <Journal className="icon"/>
+                    <br/>
+                        <Link to='newpost' className="nav-link">Journal</Link>
                     </Col>
                 </Row>
             </Container>
+
         </div>
      );
 }

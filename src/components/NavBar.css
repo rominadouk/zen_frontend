@@ -1,3 +1,11 @@
 .title {
     font-size: 70px;
 }
+
+.icon {
+    font-size: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+}

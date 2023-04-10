@@ -1,26 +1,30 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 const JournalPost = () => {
+
+    const [journals, setJournals] = useState([])
 
     let emptyPost = {
         title: '',
         post: '',
         tags: ''
     }
-const [journal, setJournal] = useState(emptyPost);
+
+const [newJournal, setNewJournal] = useState(emptyPost);
 
 
-    // const getPosts = () => {
-    //         const journals = axios.get('http://localhost:3000/journals').then((response)=> {
-    //             setJournal(response.data)
-    //         })
+    const getPosts = () => {
+            axios.get('http://localhost:4000/journals').then((response)=> {
+                setJournals(response.data)
+                console.log(response.data)
+            })
 
-    // }
+    }
 
     const handleChange = (event) => {
-        setJournal({...journal, [event.target.name]: event.target.value})
+        setNewJournal({...newJournal, [event.target.name]: event.target.value})
     }
 
     const handleCreate = (newJournal) => {
@@ -31,10 +35,12 @@ const [journal, setJournal] = useState(emptyPost);
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        handleCreate(journal)
+        handleCreate(newJournal)
     }
 
-
+useEffect(() => {
+ getPosts()
+}, [])
 
     return ( 
 
@@ -55,7 +61,18 @@ const [journal, setJournal] = useState(emptyPost);
             <br/>
             <input type='submit'/>
         </form>
-        
+        <div>
+        <h1>Previous Posts</h1>
+        {journals.map((journal)=> {
+            return (
+                <section>
+                    <p>Title: {journal.title}</p>
+                    <p>Post: {journal.post}</p>
+                    <p>Tags: [{journal.tags}]</p>
+                </section>
+            )
+        })}
+        </div>
         </>
      );
 }
