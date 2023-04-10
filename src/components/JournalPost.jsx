@@ -12,26 +12,26 @@ const JournalPost = () => {
 const [journal, setJournal] = useState(emptyPost);
 
 
-    const getPosts = () => {
-            const journals = axios.get('http://localhost:3000/journals').then((response)=> {
-                setJournal(response.data)
-            })
+    // const getPosts = () => {
+    //         const journals = axios.get('http://localhost:3000/journals').then((response)=> {
+    //             setJournal(response.data)
+    //         })
 
-    }
+    // }
 
     const handleChange = (event) => {
         setJournal({...journal, [event.target.name]: event.target.value})
     }
 
     const handleCreate = (newJournal) => {
-        axios.post('http://localhost:3000/journals', newJournal).then((response)=> {
+        axios.post('http://localhost:4000/journals', newJournal).then((response)=> {
             console.log(response)
         });
     }
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
-        await handleCreate(journal)
+        handleCreate(journal)
     }
 
 
@@ -40,17 +40,17 @@ const [journal, setJournal] = useState(emptyPost);
 
         <>
         <h1> Create New Post</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor='title'>Title</label>
-            <input name='title' placeholder='title'/>
+            <input name='title' placeholder='title' onChange={handleChange}/>
             <br/>
             <br/>
             <label htmlFor='post' name='post'>Post:</label>
-            <input name='post' placeholder='post'/>
+            <input name='post' placeholder='post' onChange={handleChange}/>
             <br/>
             <br/>
             <label htmlFor='tags' >Tags:</label>
-            <input name='tags' placeholder='tags'/>
+            <input name='tags' placeholder='tags' onChange={handleChange}/>
             <br/>
             <input type='submit'/>
         </form>
