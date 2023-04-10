@@ -1,12 +1,13 @@
-import Affirmation from './components/Affirmation';
-import JournalPost from './components/Journal';
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home.jsx"
+import JournalPost from "./components/JournalPost"
 
 const App = () => {
   return (
-    <div>
-      <Affirmation />
-      <JournalPost />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/newPost" element={<JournalPost />} />
+    </Routes>
   );
 }
 
