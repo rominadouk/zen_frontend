@@ -52,6 +52,7 @@ const [journal, setJournal] = useState(emptyPost);
             <label htmlFor='tags' >Tags:</label>
             <input name='tags' placeholder='tags' onChange={handleChange}/>
             <br/>
+            <br/>
             <input type='submit'/>
         </form>
         
