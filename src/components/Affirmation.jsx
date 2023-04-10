@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios'
 
 
 const Affirmation = () => {
@@ -62,24 +61,6 @@ const Affirmation = () => {
       useEffect(() => {
         randomAffirmation();
       }, [])
-
-
-    // const [affirmation, setAffirmation] = useState('')
-
-    // const getAffirmation = async () => {
-    //     try {
-    //     const response = await axios.get('https://www.affirmations.dev//api');
-    //         setAffirmation(response.data)
-
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
-
-
-    // useEffect(()=> {
-    //     getAffirmation();
-    // },[]);
 
     return ( 
         <>
