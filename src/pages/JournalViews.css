@@ -1,5 +1,6 @@
 .post-container {
     border: solid 3px black;
+    max-width: 700px !important;
 }
 
 .title-column {
@@ -9,4 +10,5 @@
 .post-column {
     border-top: solid 3px black;
 }
+
 

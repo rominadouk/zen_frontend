@@ -3,7 +3,7 @@ import Home from "./pages/Home.js"
 import SelfCare from "./pages/SelfCare.js"
 import JournalViews from "./pages/JournalViews.js"
 import NavBar from "./components/NavBar.jsx"
-import JournalPost from "./components/JournalPost.jsx"
+import JournalPost from "./pages/JournalPost.js"
 
 const App = () => {
   return (
