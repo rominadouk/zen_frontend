@@ -11,14 +11,6 @@ const JournalViews = () => {
     const [journals, setJournals] = useState([]);
     const navigate = useNavigate();
 
-    // const toggleDisplayPost = (postId) => {
-    //     if (postId === displayedPostId) {
-    //         setDisplayPost('')
-    //     } else {
-    //         setDisplayPost(postId)
-    //     }
-    // };
-
     //NAVIGATING VIA REACT-ROUTER-DOM
     const createPost = (event) => {
         navigate('/newpost')
@@ -78,7 +70,6 @@ const JournalViews = () => {
                                             <button className='post-button' onClick={() => setDisplayPost(journal._id)}>View More</button>
                                         )}
                                     </Col> 
-                                    {/* : <button className='post-button' onClick={toggleDisplayPost}>View More</button> */}
                                 </Row>
                             </Container>
                         </div>

@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
+import './JournalPost.css'
 
 
 const JournalPost = () => {
@@ -37,22 +39,28 @@ const [newJournal, setNewJournal] = useState(emptyPost);
     return ( 
 
         <>
-        <h1> Create New Post</h1>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='title'>Title</label>
-            <input className='form-control'name='title' placeholder='title' onChange={handleChange}/>
-            <br/>
-            <br/>
-            <label htmlFor='post' name='post'>Post:</label>
-            <textarea className='form-control' name='post' placeholder='post' onChange={handleChange}/>
-            <br/>
-            <br/>
-            <label htmlFor='tags' >Tags:</label>
-            <input className='form-control' name='tags' placeholder='tags' onChange={handleChange}/>
-            <br/>
-            <br/>
-            <input type='submit'/>
-        </form>
+        <Container className='text-center'>
+            <Row>
+                <Col className='mx-auto'>
+                <h1> Create New Post</h1>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor='title'>Title</label>
+                    <input className='form-control create-input'name='title' placeholder='title' onChange={handleChange}/>
+                    <br/>
+                    <br/>
+                    <label htmlFor='post' name='post'>Post:</label>
+                    <textarea className='form-control create-input' name='post' placeholder='post' onChange={handleChange}/>
+                    <br/>
+                    <br/>
+                    <label htmlFor='tags' >Tags:</label>
+                    <input className='form-control create-input' name='tags' placeholder='tags' onChange={handleChange}/>
+                    <br/>
+                    <br/>
+                    <input type='submit'/>
+                </form>
+                </Col>
+            </Row>
+        </Container>
         </>
      );
 }
