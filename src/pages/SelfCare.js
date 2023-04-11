@@ -1,7 +1,7 @@
 const Selfcare = () => {
     return ( 
         <>
-        <h1>Self-Care Page</h1>
+        <h1 className="mt-3 text-center">Tips and Stuff</h1>
         </>
      );
 }

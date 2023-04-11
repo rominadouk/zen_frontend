@@ -3,6 +3,8 @@ import './JournalViews.css'
 import { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { PlusCircleFill } from 'react-bootstrap-icons'
+import { TrashFill } from 'react-bootstrap-icons'
 
 const JournalViews = () => {
     const [journals, setJournals] = useState([])
@@ -10,44 +12,55 @@ const JournalViews = () => {
 
     const createPost = (event) => {
         navigate('/newpost')
+    };
 
-    }
     const getPosts = () => {
         axios.get('http://localhost:4000/journals').then((response)=> {
             setJournals(response.data)
             console.log(response.data)
         })
-    }
+    };
+
+    const handleDelete = (journals) => {
+        axios.delete(`http://localhost:4000/journals/${journals._id}`).then((response)=> {
+            getPosts();
+            window.location.reload()
+        })
+    };
 
     useEffect(() => {
         getPosts()
-       }, [])
+       }, []);
 
     return ( 
         <>
-        <div>
-        <h1 className='text-center mt-3 lg-mt-5'>My Entries</h1>
-        {journals.map((journal)=> {
-            return (
-                <Container className='post-container text-center mt-3'>
-                    <Row className=''>
-                        <Col className=''>
-                            <p>Title: {journal.title}</p>
-                        </Col>
-                        <Col>
-                        <p>Date</p>
-                        </Col>
-                        <Col>
-                        <p>Post: {journal.post}  Tags: [{journal.tags}]</p>
-                        </Col>
-                    </Row>
+            <div>
+                <h1 className='text-center mt-3 lg-mt-5'>My Entries</h1>
+                <Container className='text-center my-4'>
+                    <button className='new-post-button btn btn-dark p-2' onClick={createPost}> <PlusCircleFill /> Add New Post</button>
                 </Container>
-            )
-        })}
-        </div>
-        <Container className='text-center mt-4'>
-        <button className='new-post-button' onClick={createPost}>Add New Post</button>
-        </Container>
+                {journals.map((journal)=> {
+                    return (
+                        <div key={journal._id}>
+                            <Container className='post-container text-center mt-4'>
+                                <Row className='post-row'>
+                                    <Col className='title-column col-7'>
+                                        <p>Title: {journal.title}</p>
+                                    </Col>
+                                    <Col className='date-column col-5'>
+                                        <p>Date</p>
+                                    </Col>
+                                    <Col className='post-column col-12'>
+                                        <p>Post: {journal.post}  Tags: [{journal.tags}]</p>
+                                        <button className= 'btn btn-danger' onClick={(event) => {
+                                        handleDelete(journal)}}> <TrashFill /> Delete</button>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </div>
+                    )
+                })}
+            </div>
         </>
      );
 }

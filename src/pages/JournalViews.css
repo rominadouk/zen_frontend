@@ -1,3 +1,12 @@
 .post-container {
     border: solid 3px black;
 }
+
+.title-column {
+    border-right: solid 3px black;
+}
+
+.post-column {
+    border-top: solid 3px black;
+}
+

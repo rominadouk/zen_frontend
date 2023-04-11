@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 const JournalPost = () => {
-
 
     let emptyPost = {
         title: '',
@@ -24,11 +24,14 @@ const [newJournal, setNewJournal] = useState(emptyPost);
             console.log(response)
         });
     }
+    const navigate = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault()
         handleCreate(newJournal)
+        navigate('/journals')
     }
+
 
 
     return ( 
@@ -37,15 +40,15 @@ const [newJournal, setNewJournal] = useState(emptyPost);
         <h1> Create New Post</h1>
         <form onSubmit={handleSubmit}>
             <label htmlFor='title'>Title</label>
-            <input name='title' placeholder='title' onChange={handleChange}/>
+            <input className='form-control'name='title' placeholder='title' onChange={handleChange}/>
             <br/>
             <br/>
             <label htmlFor='post' name='post'>Post:</label>
-            <input name='post' placeholder='post' onChange={handleChange}/>
+            <textarea className='form-control' name='post' placeholder='post' onChange={handleChange}/>
             <br/>
             <br/>
             <label htmlFor='tags' >Tags:</label>
-            <input name='tags' placeholder='tags' onChange={handleChange}/>
+            <input className='form-control-sm' name='tags' placeholder='tags' onChange={handleChange}/>
             <br/>
             <br/>
             <input type='submit'/>
