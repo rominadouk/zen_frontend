@@ -1,6 +1,8 @@
 .post-container {
     border: solid 3px black;
-    max-width: 400px !important;
+    max-width: 400px;
+    background-color: whitesmoke;
+    color: grey;
 }
 
 .title-column {
