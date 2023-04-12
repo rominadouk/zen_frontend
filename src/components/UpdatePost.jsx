@@ -3,8 +3,8 @@ import axios from 'axios'
 import { useParams, useNavigate } from "react-router-dom";
 
 const UpdatePost = (props) => {
-    const [journal, setJournal] = useState({});
-    const [postData,setPostData] = useState({...journal});
+    // const [postData,setPostData] = useState({...journal});
+    const [postData, setPostData] = useState({})
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -19,17 +19,18 @@ const UpdatePost = (props) => {
         handleUpdate(postData)
     }
     const handleUpdate = (editedPost) => {
-        axios.put(`http://localhost:4000/updatepost/${props.editedPost.id}`,
-        editedPost).then((response)=> {
+        axios.put(`http://localhost:4000/updatepost/${id}`, editedPost)
+            .then((response)=> {
             navigate('/journals')
         })
         .catch((err)=> {
             console.log(err)
         })
-    }
+    };
+
     useEffect(() => {
-        axios.get(`http://localhost:4000/journals/${id}`).then((response)=>{
-            setJournal(response.data);
+        axios.get(`http://localhost:4000/journals/${id}`)
+        .then((response)=>{
             setPostData(response.data)
         }).catch((err)=> {
             console.log(err)
@@ -40,15 +41,15 @@ const UpdatePost = (props) => {
         <>
         <form onSubmit={handleSubmit}>
             <label htmlFor='title'>Title:</label>
-            <input type='text' name='title' value={journal.title} onChange={handleChange} />
+            <input type='text' name='title' value={postData.title} onChange={handleChange} />
             <br/>
             <br/>
             <label htmlFor='post'>Post:</label>
-            <input type='text' name='post' value={journal.post} onChange={handleChange} />
+            <input type='text' name='post' value={postData.post} onChange={handleChange} />
             <br/>
             <br/>
             <label htmlFor='tags'>Title:</label>
-            <input type='text' name='tags' value={journal.tags} onChange={handleChange} />
+            <input type='text' name='tags' value={postData.tags} onChange={handleChange} />
             <br />
             <br />
             <input type='submit' value='Update' />

@@ -64,10 +64,14 @@ const JournalViews = () => {
                                             <p>Tags: [{journal.tags}]</p>
                                             <button className='btn btn-danger mb-1' onClick={(event) => {
                                             handleDelete(journal)}}> <TrashFill /> Delete</button>
-                                            <Link to={`/updatepost/${journal.id}`}> <button className='btn btn-dark mb-1'> Edit </button> </Link>
+
+                                            {/* <Link to={`/updatepost/${journal._id}`} journal={journal}>  */}
+                                                <button className='btn btn-dark mb-1' onClick={() => {
+                                                    navigate(`/updatepost/${journal._id}`)}}> Edit </button> 
+                                            {/* </Link> */}
                                             </>
                                         ) : (
-                                            <button className='post-button' onClick={() => setDisplayPost(journal._id)}>View More</button>
+                                            <button className='post-button my-2' onClick={() => setDisplayPost(journal._id)}>View More</button>
                                         )}
                                     </Col> 
                                 </Row>
