@@ -2,7 +2,7 @@ import axios from 'axios'
 import './JournalViews.css'
 import { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { PlusCircleFill } from 'react-bootstrap-icons'
 import { TrashFill } from 'react-bootstrap-icons'
 
@@ -64,7 +64,7 @@ const JournalViews = () => {
                                             <p>Tags: [{journal.tags}]</p>
                                             <button className='btn btn-danger mb-1' onClick={(event) => {
                                             handleDelete(journal)}}> <TrashFill /> Delete</button>
-                                            <button className='btn btn-dark mb-1'> Edit </button>
+                                            <Link to={`/updatepost/${journal.id}`}> <button className='btn btn-dark mb-1'> Edit </button> </Link>
                                             </>
                                         ) : (
                                             <button className='post-button' onClick={() => setDisplayPost(journal._id)}>View More</button>

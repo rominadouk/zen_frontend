@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap'
 import './NavBar.css'
 import {HouseDoorFill, Journal, PersonHeart } from 'react-bootstrap-icons'
@@ -17,17 +17,17 @@ const NavBar = () => {
                 <Row>
                     <Col>
                     <PersonHeart className="icon"/>
-                        <Link to='/selfcare' className='nav-link'>Self Care</Link>
+                        <NavLink to='/selfcare' activeClassName='active-link' className='nav-link'>Self Care</NavLink>
                     </Col>
                     <Col>
                     <HouseDoorFill className='icon'/>
                     <br/>
-                        <Link to='/' className="nav-link">Home</Link>
+                        <NavLink to='/' activeClassName='active-link' className="nav-link">Home</NavLink>
                     </Col>
                     <Col>
                     <Journal className="icon"/>
                     <br/>
-                        <Link to='/journals' className="nav-link">Journal</Link>
+                        <NavLink to='/journals' activeClassName='active-link' className="nav-link">Journal</NavLink>
                     </Col>
                 </Row>
             </Container>

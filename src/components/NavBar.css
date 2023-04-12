@@ -9,3 +9,9 @@
 .nav-link {
     text-decoration: none;
 }
+
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  

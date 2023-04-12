@@ -39,7 +39,7 @@ const [newJournal, setNewJournal] = useState(emptyPost);
     return ( 
 
         <>
-        <Container className='input-container'>
+        <Container className='input-container mt-4'>
             <Row className=''>
                 <Col className=''>
                 <h1> Create New Post</h1>
