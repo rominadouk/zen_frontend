@@ -1,3 +1,5 @@
-.create-input {
-    max-width: 700px;
+.input-container {
+    max-width: 700px !important;
+    text-align: center;
+    margin: 0 auto;
 }

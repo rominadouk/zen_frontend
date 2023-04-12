@@ -39,9 +39,9 @@ const [newJournal, setNewJournal] = useState(emptyPost);
     return ( 
 
         <>
-        <Container className='text-center'>
-            <Row>
-                <Col className='mx-auto'>
+        <Container className='input-container'>
+            <Row className=''>
+                <Col className=''>
                 <h1> Create New Post</h1>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor='title'>Title</label>
