@@ -21,7 +21,7 @@ const UpdatePost = (props) => {
         handleUpdate(postData)
     }
     const handleUpdate = (editedPost) => {
-        axios.put(`http://localhost:4000/updatepost/${id}`, editedPost)
+        axios.put(`http://zen-backend-e3xl.onrender/updatepost/${id}`, editedPost)
             .then((response)=> {
             navigate('/journals')
         })
@@ -31,7 +31,7 @@ const UpdatePost = (props) => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/journals/${id}`)
+        axios.get(`http://zen-backend-e3xl.onrender/journals/${id}`)
         .then((response)=>{
             setPostData(response.data)
         }).catch((err)=> {

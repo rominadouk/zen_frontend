@@ -9,7 +9,7 @@ const Login = () => {
         event.preventDefault();
       
         try {
-          const response = await axios.post('http://localhost:4000/api/login', {
+          const response = await axios.post('http://zen-backend-e3xl.onrender/api/login', {
             email,
             password
           }, {
