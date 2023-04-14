@@ -46,22 +46,22 @@ const Home = () => {
         <Affirmation />
         <section className="feelings text-center">
             <h3>How are you feeling today, user?</h3>
-            <button className="mt-4 btn btn-info">Happy</button>
+            <button className="mt-4 btn btn-info emotion-button">Happy</button>
             <br/>
             <br/>
-            <button className='btn btn-info'>Sad</button>
+            <button className='btn btn-info emotion-button'>Sad</button>
             <br/>
             <br/>
-            <button className='btn btn-info'>Angry</button>
+            <button className='btn btn-info emotion-button'>Angry</button>
             <br/>
             <br/>
-            <button className='btn btn-info'>Scared</button>
+            <button className='btn btn-info emotion-button'>Scared</button>
             <br/>
             <br/>
-            <button className='btn btn-info'>Surprised</button>
+            <button className='btn btn-info emotion-button'>Surprised</button>
             <br/>
             <br/>
-            <button className='btn btn-info'>Disgusted</button>
+            <button className='btn btn-info emotion-button'>Disgusted</button>
         </section>
         </>
      );

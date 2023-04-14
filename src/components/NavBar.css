@@ -20,4 +20,14 @@
     .title {
         text-align: left;
     }
+    .icon {
+        margin-top: 8px;
+    }
+    .home-nav {
+        margin-left: -70px;
+        margin-right: -70px;
+    }
+    .icon {
+        font-size: 33px;
+    }
 }
