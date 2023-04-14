@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import './Affirmation.css'
 
@@ -60,9 +60,7 @@ const Affirmation = () => {
         setDailyAffirmation(affirmations[randomValue])
       };
 
-      useEffect(() => {
-        randomAffirmation();
-      }, [])
+      randomAffirmation();
 
     return ( 
         <>

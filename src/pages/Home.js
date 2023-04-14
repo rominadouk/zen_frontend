@@ -3,7 +3,7 @@ import "./Home.css"
 // import { useNavigate } from "react-router-dom";
 import Affirmation from "../components/Affirmation";
 // import axios from "axios";
-import React, { useEffect } from 'react';
+import React from 'react';
 
 
 
@@ -46,12 +46,22 @@ const Home = () => {
         <Affirmation />
         <section className="feelings text-center">
             <h3>How are you feeling today, user?</h3>
-            <button>Happy</button>
-            <button>Sad</button>
-            <button>Angry</button>
-            <button>Scared</button>
-            <button>Surprised</button>
-            <button>Disgusted</button>
+            <button className="mt-4 btn btn-info">Happy</button>
+            <br/>
+            <br/>
+            <button className='btn btn-info'>Sad</button>
+            <br/>
+            <br/>
+            <button className='btn btn-info'>Angry</button>
+            <br/>
+            <br/>
+            <button className='btn btn-info'>Scared</button>
+            <br/>
+            <br/>
+            <button className='btn btn-info'>Surprised</button>
+            <br/>
+            <br/>
+            <button className='btn btn-info'>Disgusted</button>
         </section>
         </>
      );

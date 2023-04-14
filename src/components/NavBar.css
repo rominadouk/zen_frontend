@@ -15,3 +15,9 @@
     text-decoration: underline;
   }
   
+
+@media (min-width: 992px) {
+    .title {
+        text-align: left;
+    }
+}

@@ -2,7 +2,7 @@ import axios from 'axios'
 import './JournalViews.css'
 import { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { PlusCircleFill } from 'react-bootstrap-icons'
 import { TrashFill } from 'react-bootstrap-icons'
 
