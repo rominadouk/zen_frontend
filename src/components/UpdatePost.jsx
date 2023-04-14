@@ -21,7 +21,7 @@ const UpdatePost = (props) => {
         handleUpdate(postData)
     }
     const handleUpdate = (editedPost) => {
-        axios.put(`https://zen-backend-e3xl.onrender/updatepost/${id}`, editedPost)
+        axios.put(`https://zen-backend-e3xl.onrender.com/updatepost/${id}`, editedPost)
             .then((response)=> {
             navigate('/journals')
         })
@@ -31,7 +31,7 @@ const UpdatePost = (props) => {
     };
 
     useEffect(() => {
-        axios.get(`https://zen-backend-e3xl.onrender/journals/${id}`)
+        axios.get(`https://zen-backend-e3xl.onrender.com/journals/${id}`)
         .then((response)=>{
             setPostData(response.data)
         }).catch((err)=> {

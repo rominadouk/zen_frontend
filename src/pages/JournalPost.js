@@ -22,7 +22,7 @@ const [newJournal, setNewJournal] = useState(emptyPost);
     }
 
     const handleCreate = (newJournal) => {
-        axios.post('https://zen-backend-e3xl.onrender/journals', newJournal).then((response)=> {
+        axios.post('https://zen-backend-e3xl.onrender.com/journals', newJournal).then((response)=> {
             console.log(response)
         });
     }

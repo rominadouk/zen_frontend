@@ -13,7 +13,7 @@ const Home = () => {
 
     //     const populate = async () => {
     //         try { 
-    //             const response = await axios.get('https://zen-backend-e3xl.onrender/journals', {
+    //             const response = await axios.get('https://zen-backend-e3xl.onrender.com/journals', {
     //             headers: {
     //                 'x-access-token' : localStorage.getItem('token'),
     //             },
