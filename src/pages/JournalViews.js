@@ -17,14 +17,14 @@ const JournalViews = () => {
     };
     //GET ALL POSTS
     const getPosts = () => {
-        axios.get('http://zen-backend-e3xl.onrender/journals').then((response)=> {
+        axios.get('https://zen-backend-e3xl.onrender/journals').then((response)=> {
             setJournals(response.data)
             console.log(response.data)
         })
     };
     //DELETE ROUTE
     const handleDelete = (journals) => {
-        axios.delete(`http://zen-backend-e3xl.onrender/journals/${journals._id}`).then((response)=> {
+        axios.delete(`https://zen-backend-e3xl.onrender/journals/${journals._id}`).then((response)=> {
             getPosts();
             window.location.reload()
         })

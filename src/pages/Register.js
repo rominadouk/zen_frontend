@@ -13,7 +13,7 @@ const Register = () => {
         event.preventDefault();
       
         try {
-          const response = await axios.post('http://zen-backend-e3xl.onrender/api/register', {
+          const response = await axios.post('https://zen-backend-e3xl.onrender/api/register', {
             username,
             email,
             password
