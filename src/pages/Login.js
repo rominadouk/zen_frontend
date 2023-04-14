@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -15,7 +18,13 @@ const Login = () => {
             }
           });
       
-          const data = await response.json();
+          const data = await response.data;
+          if(data.user) {
+            alert('Login successful')
+            window.location.href='/'
+          } else {
+            alert('Please check your username and password')
+          }
           console.log(data);
         } catch (error) {
           console.error(error);
