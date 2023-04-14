@@ -25,7 +25,7 @@ const Register = () => {
       
           const data = response.data;
           if(data.status === 'ok') {
-            navigate('/')
+            navigate('/login')
           }
           console.log(data);
         } catch (error) {

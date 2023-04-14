@@ -18,8 +18,8 @@ const App = () => {
       <Route path="/selfcare" element={<SelfCare />} /> 
       <Route path="/newpost" element={<JournalPost />} />
       <Route path='/updatepost/:id' element={<UpdatePost />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/login' element={<Login />} />
+      {/* <Route path='/register' element={<Register />} />
+      <Route path='/login' element={<Login />} /> */}
     </Routes>
     </>
   );

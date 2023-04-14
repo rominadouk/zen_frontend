@@ -20,6 +20,7 @@ const Login = () => {
       
           const data = await response.data;
           if(data.user) {
+            localStorage.setItem('token', data.user)
             alert('Login successful')
             window.location.href='/'
           } else {
