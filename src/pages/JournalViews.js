@@ -31,6 +31,7 @@ const JournalViews = () => {
     };
 
     useEffect(() => {
+
         getPosts()
        }, []);
 
