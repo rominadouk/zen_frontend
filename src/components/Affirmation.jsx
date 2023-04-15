@@ -69,7 +69,6 @@ const Affirmation = () => {
         <Container className='affirmation-container text-center'>
           <Row>
             <Col>
-              {/* <button onClick={randomAffirmation}>Affirmation Test</button> */}
               <h2>Today's Affirmation</h2>
               <p className='mt-3'>{dailyaffirmation}</p>
             </Col>

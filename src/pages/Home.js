@@ -4,11 +4,13 @@ import "./Home.css"
 import Affirmation from "../components/Affirmation";
 // import axios from "axios";
 import React from 'react';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 
 const Home = () => {
-
+    const [selectedEmotion, setSelectedEmotion] = useState('')
     //     const navigate = useNavigate()
 
     //     const populate = async () => {
@@ -46,22 +48,19 @@ const Home = () => {
         <Affirmation />
         <section className="feelings text-center">
             <h3>How are you feeling today, user?</h3>
-            <button className="mt-4 btn btn-info emotion-button">Happy</button>
+            <button className="mt-4 btn btn-info emotion-button" onClick={() => setSelectedEmotion('happy')}>Happy</button>
             <br/>
             <br/>
-            <button className='btn btn-info emotion-button'>Sad</button>
+            <button className='btn btn-info emotion-button' onClick={() => setSelectedEmotion('sad')}>Sad</button>
             <br/>
             <br/>
-            <button className='btn btn-info emotion-button'>Angry</button>
+            <button className='btn btn-info emotion-button' onClick={() => setSelectedEmotion('angry')}>Angry</button>
             <br/>
             <br/>
-            <button className='btn btn-info emotion-button'>Scared</button>
+            <button className='btn btn-info emotion-button' onClick={() => setSelectedEmotion('scared')}>Scared</button>
             <br/>
             <br/>
-            <button className='btn btn-info emotion-button'>Surprised</button>
-            <br/>
-            <br/>
-            <button className='btn btn-info emotion-button'>Disgusted</button>
+            <button className='btn btn-info emotion-button' onClick={() => setSelectedEmotion('anxious')}>Anxious</button>
         </section>
         </>
      );

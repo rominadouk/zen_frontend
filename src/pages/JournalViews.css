@@ -2,8 +2,13 @@
     border: solid 3px black;
     border-radius: 15px;
     max-width: 400px;
+
     background-color: whitesmoke;
     color: grey;
+}
+.post-outer-container {
+    max-height: 50px;
+    overflow: scroll;
 }
 
 .title-column {
@@ -18,5 +23,13 @@
 @media (min-width: 992px) {
     .post-container {
         max-width: 700px !important;
+    }
+    .title-column, .date-column {
+        font-size: 20px;
+    }
+
+    #post-text {
+        font-size: 18px;
+
     }
 }

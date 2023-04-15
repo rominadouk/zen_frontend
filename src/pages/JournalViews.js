@@ -49,27 +49,25 @@ const JournalViews = () => {
                     const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year:'numeric'});
 
                     return (
-                        <div key={journal._id}>
-                            <Container className='post-container text-center mt-4'>
+                        <div className='' key={journal._id}>
+                            <Container className='post-container text-center mt-4 mb-3'>
                                 <Row className='post-row'>
                                     <Col className='title-column col-7'>
-                                        <p>Title: {journal.title}</p>
+                                        <p className='mt-2'>{journal.title}</p>
                                     </Col>
                                     <Col className='date-column col-5'>
-                                        <p>Date: {formattedDate}</p>
+                                        <p className='mt-2'>{formattedDate}</p>
                                     </Col>
                                     <Col className='post-column col-12'>
                                         {isDisplayed ? ( 
                                             <>
-                                            <p>Post: {journal.post}</p>
-                                            <p>Tags: [{journal.tags}]</p>
+                                            <p className='mt-3' id='post-text'>{journal.post}</p>
+                                            <p id='tags-text'>Tags: [{journal.tags}]</p>
                                             <button className='btn btn-danger mb-1' onClick={(event) => {
                                             handleDelete(journal)}}> <TrashFill /> Delete</button>
+                                            <button className='btn btn-dark mb-1' onClick={() => {
+                                                navigate(`/updatepost/${journal._id}`)}}> Edit </button>
 
-                                            {/* <Link to={`/updatepost/${journal._id}`} journal={journal}>  */}
-                                                <button className='btn btn-dark mb-1' onClick={() => {
-                                                    navigate(`/updatepost/${journal._id}`)}}> Edit </button> 
-                                            {/* </Link> */}
                                             </>
                                         ) : (
                                             <button className='post-button my-2' onClick={() => setDisplayPost(journal._id)}>View More</button>
@@ -79,6 +77,7 @@ const JournalViews = () => {
                             </Container>
                         </div>
                     )
+                   
                 })}
             </div>
         </>
