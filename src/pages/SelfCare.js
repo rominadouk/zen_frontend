@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+
 
 
 
 const Selfcare = () => {
 
-    const [selectedEmotions, setSelectedEmotions] = useState([])
 
     
     return ( 
