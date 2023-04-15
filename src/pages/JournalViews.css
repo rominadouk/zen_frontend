@@ -24,12 +24,14 @@
     .post-container {
         max-width: 700px !important;
     }
+    .filter-container {
+        max-width: 720px !important;
+    }
     .title-column, .date-column {
         font-size: 20px;
     }
 
     #post-text {
         font-size: 18px;
-
     }
 }

@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import './Affirmation.css'
 
 
 const Affirmation = () => {
     const [dailyaffirmation, setDailyAffirmation] = useState('')
-    const affirmations = [
+    const affirmations = useMemo(() =>  [
         "You got this",
         "You'll figure it out",
         "You're a smart cookie",
@@ -53,16 +53,12 @@ const Affirmation = () => {
         "Starting is the most difficult step - but you can do it",
         "Don't forget to enjoy the journey",
         "It's not a mistake, it's a learning opportunity",
-      ];
+      ], []);
 
-      const randomAffirmation = () => {
-        let randomValue = Math.floor(Math.random() * affirmations.length)
-        setDailyAffirmation(affirmations[randomValue])
-      };
-
-      useEffect(()=> {
-        randomAffirmation();
-      }, [])
+      useEffect(() => {
+        const randomValue = Math.floor(Math.random() * affirmations.length);
+        setDailyAffirmation(affirmations[randomValue]);
+      },[affirmations]);
 
     return ( 
         <>

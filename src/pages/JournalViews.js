@@ -1,15 +1,15 @@
 import axios from 'axios'
 import './JournalViews.css'
 import { useState, useEffect } from 'react'
-import { Container, Row, Col, DropdownButton, Dropdown, Form } from 'react-bootstrap'
+import { Container, Row, Col, InputGroup, FormControl, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { PlusCircleFill } from 'react-bootstrap-icons'
 import { TrashFill } from 'react-bootstrap-icons'
+import { Search } from 'react-bootstrap-icons'
 
 const JournalViews = () => {
     const [displayPost, setDisplayPost] = useState('');
     const [journals, setJournals] = useState([]);
-    const [filterType, setFilterType] = useState('title')
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate();
 
@@ -46,8 +46,10 @@ const JournalViews = () => {
             return journal
         } else if (journal.tags.some((tag) =>
         tag.toLowerCase().includes(searchTerm.toLowerCase())
-        )) {
+        )) { 
             return journal
+        } else {
+            return null
         }
        });
 
@@ -60,15 +62,11 @@ const JournalViews = () => {
                 </Container>
                 <Container className='filter-container'>
                     <Row>
-                        {/* <Col>
-                            <DropdownButton title={`Filter by ${filterType}`}>
-                                <Dropdown.Item onClick={()=> setFilterType('title')}>Title</Dropdown.Item>
-                                <Dropdown.Item onClick={() => setFilterType('date')}>Date</Dropdown.Item>
-                                <Dropdown.Item onClick={()=> setFilterType('tags')}>Tags</Dropdown.Item>
-                            </DropdownButton>
-                        </Col> */}
                         <Col>
-                            <Form.Control type='text' placeholder='Search By Title, Date, or Tags' value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
+                        <InputGroup>
+                            <FormControl type='text' placeholder='Search By Title, Date, or Tags' value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
+                            <Button variant='outline-secondary' id="search-button"> <Search /> </Button>
+                        </InputGroup>
                         </Col>
                     </Row>
                 </Container>
