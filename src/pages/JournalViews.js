@@ -1,7 +1,7 @@
 import axios from 'axios'
 import './JournalViews.css'
 import { useState, useEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, DropdownButton, Dropdown, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { PlusCircleFill } from 'react-bootstrap-icons'
 import { TrashFill } from 'react-bootstrap-icons'
@@ -9,6 +9,8 @@ import { TrashFill } from 'react-bootstrap-icons'
 const JournalViews = () => {
     const [displayPost, setDisplayPost] = useState('');
     const [journals, setJournals] = useState([]);
+    const [filterType, setFilterType] = useState('title')
+    const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate();
 
     //NAVIGATING VIA REACT-ROUTER-DOM
@@ -31,9 +33,23 @@ const JournalViews = () => {
     };
 
     useEffect(() => {
-
         getPosts()
        }, []);
+
+       //SEARCH BAR FEATURE -- TAGS IS AN ARRAY: USE .SOME 
+       const searchedJournals = journals.filter((journal) => {
+        const date = new Date(journal.createdAt)
+        const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric'})
+        if (journal.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return journal
+        } else if (formattedDate.includes(searchTerm)) {
+            return journal
+        } else if (journal.tags.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase())
+        )) {
+            return journal
+        }
+       });
 
     return ( 
         <>
@@ -42,7 +58,21 @@ const JournalViews = () => {
                 <Container className='text-center my-4'>
                     <button className='new-post-button btn btn-dark p-2' onClick={createPost}> <PlusCircleFill /> Add New Post</button>
                 </Container>
-                {journals.map((journal)=> {
+                <Container className='filter-container'>
+                    <Row>
+                        {/* <Col>
+                            <DropdownButton title={`Filter by ${filterType}`}>
+                                <Dropdown.Item onClick={()=> setFilterType('title')}>Title</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setFilterType('date')}>Date</Dropdown.Item>
+                                <Dropdown.Item onClick={()=> setFilterType('tags')}>Tags</Dropdown.Item>
+                            </DropdownButton>
+                        </Col> */}
+                        <Col>
+                            <Form.Control type='text' placeholder='Search By Title, Date, or Tags' value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
+                        </Col>
+                    </Row>
+                </Container>
+                {searchedJournals.map((journal)=> {
                     const isDisplayed = journal._id === displayPost;
                     //Working with timestamped date to month and day format
                     const date = new Date(journal.createdAt);
