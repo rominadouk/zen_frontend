@@ -58,6 +58,8 @@ const [newJournal, setNewJournal] = useState(emptyPost);
                     <br/>
                     <input type='submit'/>
                 </form>
+                <br/>
+                    <button onClick={()=> navigate('/journals')}>Back</button>
                 </Col>
             </Row>
         </Container>

@@ -60,6 +60,8 @@ const UpdatePost = (props) => {
                         <br />
                         <input type='submit' value='Update' />
                     </form>
+                    <br/>
+                    <button onClick={()=> navigate('/journals')}>Back</button>
                 </Col>
             </Row>
         </Container>
