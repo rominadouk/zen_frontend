@@ -1,8 +1,11 @@
-import { useEffect, useState, useMemo } from "react"
+import { useEffect, useState, useMemo, useCallback } from "react"
 
 const Skincare = () => {
     const [tip, setRandomTip] = useState('')
     const [activity, setRandomActivity] = useState('')
+
+
+    //useMemo hook memoize the arrays of tips & activities instead of creating them each render. Computer knows these will always stay the same unless it's dependencies change. 
     const tips = useMemo(() => [
         'wear sunscreen daily -- one of the single most important things you can do for your skin, UV rays from the sun can cause sunburn, skincancer, and premature aging skin (wrinkles and age spots)',
         'steer clear or reduce the use of tanning beds -- they emit harmful UV rays',
@@ -17,11 +20,7 @@ const Skincare = () => {
 
     ], []);
 
-    const randomizeTip = () => {
-        const randomTipIndex = Math.floor(Math.random()* tips.length)
-        const randomTip = tips[randomTipIndex]
-        setRandomTip(randomTip)
-    }
+
 
     const activities = useMemo(() => [
         'facemasks - there are masks to suit every type of need, hydration, plump-iness, wrinkles',
@@ -36,23 +35,32 @@ const Skincare = () => {
         'have a spa day'
     ], []);
 
-    const randomizeActivity = () => {
-        const randomActivity = Math.floor(Math.random()* activities.length)
-        setRandomActivity(randomActivity)
-        console.log(tip)
-        return randomActivity
-    }
+ //Callback functions to randomly select tip and activity; 
+    const randomizeTip = useCallback(() => {
+        const randomTipIndex = Math.floor(Math.random()* tips.length)
+        const randomTip = tips[randomTipIndex]
+        setRandomTip(randomTip)
+    }, [tips]);
 
+    const randomizeActivity = useCallback(() => {
+        const randomActivityIndex = Math.floor(Math.random()* activities.length)
+        setRandomActivity(activities[randomActivityIndex])
+    }, [activities]);
+
+    //useEffect with two dependencies: will run 'randomizetip' or 'randomizeactivity' changes. Will then call randomizeTip or randomizeActivity functions; used to tigger random selections whenever component re-renders, making sure it's always up-to-date.
     useEffect(()=> {
-        randomizeTip()
-        randomizeActivity()
-    }, [randomizeActivity])
+        randomizeTip();
+        randomizeActivity();
+    }, [randomizeTip, randomizeActivity])
+
+
+    
 
     return ( 
         <>
         <div>
-            <p>{tip}</p>
-            <p>{activity}</p>
+            <p>Skincare Tip: {tip}</p>
+            <p>Skincare Activity: {activity}</p>
         </div>
         </>
 
