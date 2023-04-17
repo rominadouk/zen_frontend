@@ -5,7 +5,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import './UpdatePost.css'
 
 const UpdatePost = (props) => {
-    // const [postData,setPostData] = useState({...journal});
     const [postData, setPostData] = useState({})
     const { id } = useParams();
     const navigate = useNavigate();

@@ -81,15 +81,15 @@ const JournalViews = () => {
                             <Container className='post-container text-center mt-4 mb-3'>
                                 <Row className='post-row'>
                                     <Col className='title-column col-7'>
-                                        <p className='mt-2'>{journal.title}</p>
+                                        <p className='mt-3 journal-text journal-title'>{journal.title}</p>
                                     </Col>
                                     <Col className='date-column col-5'>
-                                        <p className='mt-2'>{formattedDate}</p>
+                                        <p className='mt-3 journal-text'>{formattedDate}</p>
                                     </Col>
                                     <Col className='post-column col-12'>
                                         {isDisplayed ? ( 
                                             <>
-                                            <p className='mt-3' id='post-text'>{journal.post}</p>
+                                            <p className='mt-3 journal-text' id='post-text'>{journal.post}</p>
                                             <p id='tags-text'>Tags: [{journal.tags}]</p>
                                             <button className='btn btn-danger mb-1' onClick={(event) => {
                                             handleDelete(journal)}}> <TrashFill /> Delete</button>
@@ -98,7 +98,7 @@ const JournalViews = () => {
 
                                             </>
                                         ) : (
-                                            <button className='post-button my-2' onClick={() => setDisplayPost(journal._id)}>View More</button>
+                                            <button className='post-button py-2' onClick={() => setDisplayPost(journal._id)}>View Entry</button>
                                         )}
                                     </Col> 
                                 </Row>

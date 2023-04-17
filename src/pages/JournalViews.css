@@ -1,24 +1,32 @@
 .post-container {
-    border: solid 3px black;
-    border-radius: 15px;
     max-width: 400px;
-
-    background-color: whitesmoke;
-    color: grey;
+    margin-top: 60px;
+    border: 2px solid var(--mint-green);
+    border-radius: 20px;
+    background: var(--azure);
 }
 .post-outer-container {
     max-height: 50px;
     overflow: scroll;
 }
-
 .title-column {
-    border-right: solid 3px black;
+    border-right: 2px solid var(--mint-green);
 }
-
 .post-column {
-    border-top: solid 3px black;
+    border-top: 2px solid var(--mint-green);
 }
-
+.journal-text {
+    font-size: medium;
+}
+.journal-title {
+    font-weight: bold;
+}
+.post-button {
+    width: 100%;
+    background-color: var(--azure);
+    border: none;
+    color: var(--feldgrau);
+}
 
 @media (min-width: 992px) {
     .post-container {
@@ -28,10 +36,10 @@
         max-width: 720px !important;
     }
     .title-column, .date-column {
-        font-size: 20px;
+        /* font-size: 20px; */
     }
 
     #post-text {
-        font-size: 18px;
+        /* font-size: 18px; */
     }
 }

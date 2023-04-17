@@ -20,7 +20,7 @@ const Joke = () => {
 //use conditional rendering, checks if the right side is true first, if it is, it will render the right side. 
     return (
         <>
-            {joke.length > 0 && <p>{joke[0].joke}</p>}
+            {joke.length > 0 && <p>Joke: {joke[0].joke}</p>}
         </>
     );
 }

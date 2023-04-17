@@ -24,8 +24,8 @@ const Social = () => {
 
     return ( 
         <>
-        <p>{socialActivity.activity}</p>
-        <p>{socialActivity.type}</p>
+        <p>Social Activity: {socialActivity.activity}</p>
+        <p>Cost Rating: {socialActivity.price}</p>
         </>
      );
 }

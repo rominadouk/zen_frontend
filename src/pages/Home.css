@@ -1,17 +1,65 @@
+:root {
+    --feldgrau: #56766A;
+    --veridian: #6B9080;
+    --cambridge-blue: #A4C3B2;
+    --mint-green: #CCE3DE;
+    --azure: #EAF4F4;
+    --mint-cream: #F6FFF8;
+    --gray: #7F868C;
+    --dim-gray: #66615b;
+    --black: #252422;
+    --mint: #75C79B;
+    --danger-bg: #fccbc7;
+    --danger-color: #f44336;
+}
+html, body {
+    background-color: var(--mint-cream) !important;
+}
+.title,
+.selfcare-nav,
+.home-nav,
+.journals-nav,
+a.nav-link {
+    color: var(--feldgrau) !important;
+}
+h1, h2, h3, h4, h5, h6,
+p, li {
+    color: var(--feldgrau);
+}
 .feelings {
     margin-top: 50px;
 }
-
-.emotion-button {
-    width: 100px;
+.text-center {
+    text-align: center;
 }
-
+.btn.emotion-button,
+.btn.new-post-button {
+    min-width: 140px;
+    background-color: var(--feldgrau);
+    color: var(--mint-cream);
+    border-color: var(--feldgrau);
+}
+.btn.emotion-button:hover {
+    background-color: var(--cambridge-blue);
+    border-color: var(--veridian);
+    color: var(--black);
+}
+.btn.emotion-button:active {
+    background-color: var(--mint) !important;
+    border-color: var(--cambridge-blue) !important;
+    color: var(--black);
+}
+.btn.btn-danger {
+    background-color: var(--danger-bg);
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
 
 @media (min-width: 992px) {
 
     .emotion-button {
         font-size: 20px !important;
-        width: 115px;
+        min-width: 140px;
     }
 
 }

@@ -64,8 +64,8 @@ const Affirmation = () => {
         <>
         <Container className='affirmation-container text-center'>
           <Row>
-            <Col>
-              <h2>Today's Affirmation</h2>
+            <Col className='p-5'>
+              <h2>Daily Affirmation</h2>
               <p className='mt-3'>{dailyaffirmation}</p>
             </Col>
           </Row>

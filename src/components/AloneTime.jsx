@@ -24,8 +24,8 @@ const AloneTime = () => {
 
     return ( 
         <>
-        <p>{soloActivity.activity}</p>
-        <p>{soloActivity.type}</p>
+        <p>Solo Activity: {soloActivity.activity}</p>
+        <p>Cost Rating: {soloActivity.price}</p>
         </>
      );
 }
