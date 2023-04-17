@@ -20,7 +20,17 @@ const Joke = () => {
 //use conditional rendering, checks if the right side is true first, if it is, it will render the right side. 
     return (
         <>
-            {joke.length > 0 && <p>Joke: {joke[0].joke}</p>}
+            <div className="post-container container px-5 py-4">
+                {joke.length > 0 &&
+                <>
+                    <h2>Joke</h2> 
+                    <p className='lead'>{joke[0].joke}</p> 
+                    <div className="mt-4 text-right">
+                        <button className="btn btn-dark" onClick={getJoke}>Next Joke</button>
+                    </div>
+                </> }
+            </div>
+            
         </>
     );
 }

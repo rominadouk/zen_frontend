@@ -20,12 +20,17 @@ const Exercise = () => {
 
     return (  
         <>
-        <p>Exercise Name:{exercise.name}</p>
-        <p>Exercise Type:{exercise.type}</p>
-        <p>Muscle:{exercise.muscle}</p>
-        <p>Equipment:{exercise.equipment}</p>
-        <p>Difficulty:{exercise.difficulty}</p>
-        <p>Instructions:{exercise.instructions}</p>
+        <div className="post-container container px-5 py-4">
+            <h2 className="titlecase">{exercise.name}</h2>
+            <p className="titlecase lead">{exercise.difficulty} {exercise.type} exercise for your {exercise.muscle}</p>
+            <h3>Equipment</h3>
+            <p className="titlecase lead">{exercise.equipment}</p>
+            <h3>Instructions</h3>
+            <p>{exercise.instructions}</p>
+            <div className="mt-4 text-right">
+                <button className="btn btn-dark" onClick={getExercise}>Next Exercise</button>
+            </div>
+        </div>
         </>
     );
 }

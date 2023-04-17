@@ -17,28 +17,33 @@ const Selfcare = () => {
     
     return ( 
         <>
-        <h1 className="mt-3 text-center">Tips and More</h1>
-        <Container className='filter-container'>
-                    <Row>
-                        <Col>
-                        <p className="mt-2"> Today I want to...</p>
-                        </Col>
-                        <Col>
-                            <DropdownButton title={dropdownTitle} onSelect={handleSelect}>
-                                <Dropdown.Item eventKey="exercise">exercise</Dropdown.Item>
-                                <Dropdown.Item eventKey="improve my skincare">improve my skin care</Dropdown.Item>
-                                <Dropdown.Item eventKey='laugh'>laugh</Dropdown.Item>
-                                <Dropdown.Item eventKey='be social'>be social</Dropdown.Item>
-                                <Dropdown.Item eventKey='have alone-time'>have alone time</Dropdown.Item>
-                            </DropdownButton>
-                        </Col>
-                    </Row>
+        <h1 className="my-3 text-center">Self Care</h1>
+        <Container className='filter-container text-center'>
+            <Row>
+                <Col>
+                <p className="mt-2 mx-1"> Today I want to...</p>
+                    <DropdownButton className="mx-1" title={dropdownTitle} onSelect={handleSelect}>
+                        <Dropdown.Item eventKey="exercise">exercise</Dropdown.Item>
+                        <Dropdown.Item eventKey="improve my skincare">improve my skin care</Dropdown.Item>
+                        <Dropdown.Item eventKey='laugh'>laugh</Dropdown.Item>
+                        <Dropdown.Item eventKey='be social'>be social</Dropdown.Item>
+                        <Dropdown.Item eventKey='have alone-time'>have alone time</Dropdown.Item>
+                    </DropdownButton>
+                </Col>
+            </Row>
         </Container>
-        {selectedOption === "improve my skincare" && <Skincare />}
-        {selectedOption === "exercise" && <Exercise /> }
-        {selectedOption === "laugh" && <Joke /> }
-        {selectedOption === "be social" && <Social /> }
-        {selectedOption === "have alone-time" && <AloneTime /> }
+        <Container className="mb-5">
+            <Row>
+                <Col>
+                    {selectedOption === "improve my skincare" && <Skincare />}
+                    {selectedOption === "exercise" && <Exercise /> }
+                    {selectedOption === "laugh" && <Joke /> }
+                    {selectedOption === "be social" && <Social /> }
+                    {selectedOption === "have alone-time" && <AloneTime /> }
+                </Col>
+            </Row>
+        </Container>
+        
         </>
      );
 }

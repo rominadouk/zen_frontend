@@ -23,10 +23,11 @@
 }
 .post-button {
     width: 100%;
-    background-color: var(--azure);
+    background-color: transparent;
     border: none;
-    color: var(--feldgrau);
+    color: var(--veridian);
 }
+
 
 @media (min-width: 992px) {
     .post-container {

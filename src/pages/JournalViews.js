@@ -58,7 +58,7 @@ const JournalViews = () => {
             <div>
                 <h1 className='text-center mt-3 lg-mt-5'>My Entries</h1>
                 <Container className='text-center my-4'>
-                    <button className='new-post-button btn btn-dark p-2' onClick={createPost}> <PlusCircleFill /> Add New Post</button>
+                    <button className='new-post-button btn btn-dark p-2' onClick={createPost}> <PlusCircleFill /> New Entry</button>
                 </Container>
                 <Container className='filter-container'>
                     <Row>
@@ -91,9 +91,9 @@ const JournalViews = () => {
                                             <>
                                             <p className='mt-3 journal-text' id='post-text'>{journal.post}</p>
                                             <p id='tags-text'>Tags: [{journal.tags}]</p>
-                                            <button className='btn btn-danger mb-1' onClick={(event) => {
+                                            <button className='btn btn-danger mb-2 mx-1' onClick={(event) => {
                                             handleDelete(journal)}}> <TrashFill /> Delete</button>
-                                            <button className='btn btn-dark mb-1' onClick={() => {
+                                            <button className='btn btn-dark mb-2 mx-1' onClick={() => {
                                                 navigate(`/updatepost/${journal._id}`)}}> Edit </button>
 
                                             </>

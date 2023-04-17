@@ -1,5 +1,11 @@
 .input-container {
     max-width: 700px !important;
-    text-align: center;
+    /* text-align: center; */
     margin: 0 auto;
+}
+form {
+    text-align: left;
+}
+.submit-button {
+
 }

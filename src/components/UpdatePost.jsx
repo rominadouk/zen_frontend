@@ -40,27 +40,21 @@ const UpdatePost = (props) => {
 
     return ( 
         <>
-        <h1 className="text-center mt-4">Edit Post</h1>
+        
         <Container className="update-container mt-4">
             <Row>
                 <Col>
+                    <h1 className="mt-4">Edit Journal Entry</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor='title'>Title:</label>
-                        <input className='form-control update-input' type='text' name='title' value={postData.title} onChange={handleChange} />
-                        <br/>
-                        <br/>
-                        <label htmlFor='post'>Post:</label>
-                        <input className='form-control update-input' type='text' name='post' value={postData.post} onChange={handleChange} />
-                        <br/>
-                        <br/>
-                        <label htmlFor='tags'>Tags:</label>
-                        <input className='form-control update-input' type='text' name='tags' value={postData.tags} onChange={handleChange} />
-                        <br />
-                        <br />
-                        <input type='submit' value='Update' />
+                        <label className="mb-1 mt-3" htmlFor='title'>Title</label>
+                        <input className='form-control update-input mb-3' type='text' name='title' value={postData.title} onChange={handleChange} />
+                        <label className="mb-1" htmlFor='post'>Entry</label>
+                        <textarea className='form-control update-input mb-3' type='text' name='post' value={postData.post} onChange={handleChange} />
+                        <label className="mb-1" htmlFor='tags'>Tags</label>
+                        <input className='form-control update-input mb-4' type='text' name='tags' value={postData.tags} onChange={handleChange} />
+                        <input className='btn emotion-button' type='submit' value='Update' />
                     </form>
-                    <br/>
-                    <button onClick={()=> navigate('/journals')}>Back</button>
+                    <button className='btn btn-dark mt-4' onClick={()=> navigate('/journals')}>Cancel</button>
                 </Col>
             </Row>
         </Container>

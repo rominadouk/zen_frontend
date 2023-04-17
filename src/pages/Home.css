@@ -14,6 +14,7 @@
 }
 html, body {
     background-color: var(--mint-cream) !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 .title,
 .selfcare-nav,
@@ -32,27 +33,56 @@ p, li {
 .text-center {
     text-align: center;
 }
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right;
+}
+.titlecase {
+    text-transform: capitalize;
+}
 .btn.emotion-button,
-.btn.new-post-button {
+.btn.btn-primary,
+.btn.btn-dark.new-post-button,
+.submit-button {
     min-width: 140px;
     background-color: var(--feldgrau);
     color: var(--mint-cream);
     border-color: var(--feldgrau);
 }
-.btn.emotion-button:hover {
+.btn.emotion-button:hover,
+.btn.btn-primary:hover {
     background-color: var(--cambridge-blue);
     border-color: var(--veridian);
     color: var(--black);
 }
-.btn.emotion-button:active {
+.btn.emotion-button:active,
+.btn.btn-primary:active,
+.btn.btn-primary:focus-visible,
+.btn.btn-primary.show {
     background-color: var(--mint) !important;
     border-color: var(--cambridge-blue) !important;
     color: var(--black);
 }
+.btn.btn-dark {
+    background: transparent;
+    color: var(--feldgrau);
+    border-color: var(--dim-gray);
+    min-width: 140px;
+}
+.btn.btn-dark:hover {
+    background-color: var(--veridian);
+}
 .btn.btn-danger {
-    background-color: var(--danger-bg);
+    background-color: transparent;
     color: var(--danger-color);
     border-color: var(--danger-color);
+    min-width: 140px;
+}
+.filter-container .dropdown,
+.filter-container p {
+    display: inline;
 }
 
 @media (min-width: 992px) {

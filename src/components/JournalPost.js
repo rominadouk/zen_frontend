@@ -42,24 +42,17 @@ const [newJournal, setNewJournal] = useState(emptyPost);
         <Container className='input-container mt-4'>
             <Row className=''>
                 <Col className=''>
-                <h1> Create New Post</h1>
+                <h1 className='mt-4'> New Journal Entry</h1>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor='title'>Title</label>
-                    <input className='form-control create-input'name='title' placeholder='title' onChange={handleChange}/>
-                    <br/>
-                    <br/>
-                    <label htmlFor='post' name='post'>Post:</label>
-                    <textarea className='form-control create-input' name='post' placeholder='post' onChange={handleChange}/>
-                    <br/>
-                    <br/>
-                    <label htmlFor='tags' >Tags:</label>
-                    <input className='form-control create-input' name='tags' placeholder='tags' onChange={handleChange}/>
-                    <br/>
-                    <br/>
-                    <input type='submit'/>
+                    <label className='mb-1 mt-3' htmlFor='title'>Title</label>
+                    <input className='form-control create-input mb-3'name='title' placeholder='Name your journal entry' onChange={handleChange}/>
+                    <label className='mb-1' htmlFor='post' name='post'>Entry</label>
+                    <textarea className='form-control create-input mb-3' name='post' placeholder='Enter the details' onChange={handleChange}/>
+                    <label  className='mb-1' htmlFor='tags' >Tags</label>
+                    <input className='form-control create-input mb-4' name='tags' placeholder='Separate tags using a comma (,)' onChange={handleChange}/>
+                    <input className='btn emotion-button' type='submit'/>
                 </form>
-                <br/>
-                    <button onClick={()=> navigate('/journals')}>Back</button>
+                <button className='btn btn-dark mt-4' onClick={()=> navigate('/journals')}>Cancel</button>
                 </Col>
             </Row>
         </Container>

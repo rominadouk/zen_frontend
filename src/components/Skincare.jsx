@@ -36,32 +36,37 @@ const Skincare = () => {
     ], []);
 
  //Callback functions to randomly select tip and activity; 
-    const randomizeTip = useCallback(() => {
+    const randomizeTipAndActivity = useCallback(() => {
+        //Randomize Tip
         const randomTipIndex = Math.floor(Math.random()* tips.length)
         const randomTip = tips[randomTipIndex]
         setRandomTip(randomTip)
-    }, [tips]);
-
-    const randomizeActivity = useCallback(() => {
+        //Randomize Activity
         const randomActivityIndex = Math.floor(Math.random()* activities.length)
         setRandomActivity(activities[randomActivityIndex])
-    }, [activities]);
+    }, [tips, activities]);
+
 
     //useEffect with two dependencies: will run 'randomizetip' or 'randomizeactivity' changes. Will then call randomizeTip or randomizeActivity functions; used to tigger random selections whenever component re-renders, making sure it's always up-to-date.
     useEffect(()=> {
-        randomizeTip();
-        randomizeActivity();
-    }, [randomizeTip, randomizeActivity])
+        randomizeTipAndActivity();
+    }, [randomizeTipAndActivity])
 
 
     
 
     return ( 
         <>
-        <div>
-            <p>Skincare Tip: {tip}</p>
-            <p>Skincare Activity: {activity}</p>
+        <div className="post-container container px-5 py-4">            
+            <h2>Skincare Tip</h2>
+            <p className="lead">{tip}</p>
+            <h3>Skincare Activity</h3>
+            <p className="lead titlecase">{activity}</p>
+            <div className="mt-4 text-right">
+                <button className="btn btn-dark" onClick={randomizeTipAndActivity}>Next Tip</button>
+            </div>
         </div>
+        
         </>
 
      );
