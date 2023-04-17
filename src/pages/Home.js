@@ -15,7 +15,7 @@ const Home = () => {
     const [angryData, setAngryAmount] = useState(Number)
 
     const getEmotions = () => {
-        axios.get('http://localhost:4000/emotions').then((response)=> {
+        axios.get('https://zen-backend-e3xl.onrender.com/emotions').then((response)=> {
             setEmotionData(response.data)
             setHappyAmount(response.data[0].instances)
             setSadAmount(response.data[1].instances)

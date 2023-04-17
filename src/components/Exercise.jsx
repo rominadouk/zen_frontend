@@ -6,7 +6,7 @@ const Exercise = () => {
  const [exercise, setExercise] = useState([])
 
     const getExercise = () => {
-        axios.get('http://localhost:4000/exercises').then((response) => {
+        axios.get('https://zen-backend-e3xl.onrender.com/exercises').then((response) => {
         setExercise(response.data)
         console.log(response.data)
         }).catch(err => {

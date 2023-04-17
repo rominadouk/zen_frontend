@@ -6,7 +6,7 @@ const Joke = () => {
 
     const getJoke = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/jokes');
+            const response = await axios.get('https://zen-backend-e3xl.onrender.com/jokes');
             setJoke(response.data);
             console.log(response.data);
         } catch (err) {
