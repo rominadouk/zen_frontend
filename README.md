@@ -45,7 +45,7 @@ When deploying, a “webpack deprecated” error displays. *Will update
 User Authentication (could not Authenticate using JWT, will revisit Authentication with sessions).
 useEffect will sometimes throw a dependency error, error has been fixed for now.
 Some info pulled from a third-party API on the self-care page has a second delay on loading.
-Important Note!! ‘Jokes’ component includes jokes pulled from a third-party API, this content is NOT moderated by me, and may contain a few jokes that are inappropriate to some. They do NOT reflect my views. This will be moderated in the future. This is included in my app for now for development purposes only.
+Important Note!! ‘Jokes’ component includes jokes pulled from a third-party API, this content is NOT moderated by me, and may contain a few jokes that are inappropriate to some.This will be moderated in the future. This is included in my app for now for development purposes only.
 
 ## Future Updates: 
 Color Scheme/Theme Picker

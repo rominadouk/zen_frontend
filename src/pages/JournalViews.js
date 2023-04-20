@@ -21,7 +21,6 @@ const JournalViews = () => {
     const getPosts = () => {
         axios.get('https://zen-backend-e3xl.onrender.com/journals').then((response)=> {
             setJournals(response.data)
-            console.log(response.data)
         })
     };
     //DELETE ROUTE
