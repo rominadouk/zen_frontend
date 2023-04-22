@@ -4,6 +4,7 @@ import './NavBar.css'
 import {HouseDoorFill, Journal, PersonHeart } from 'react-bootstrap-icons'
 
 const NavBar = () => {
+
     return ( 
         <div>
             <Container>
@@ -17,17 +18,17 @@ const NavBar = () => {
                 <Row>
                     <Col>
                     <PersonHeart className="icon"/>
-                        <NavLink to='/selfcare' activeclassname='active-link' className='nav-link'>Self Care</NavLink>
+                        <NavLink to='/selfcare' className={(navData) => (navData.isActive ? "active-link nav-link" : 'nav-link')}>Self Care</NavLink>
                     </Col>
                     <Col>
                     <HouseDoorFill className='icon'/>
                     <br/>
-                        <NavLink to='/' activeclassname='active-link' className="nav-link">Home</NavLink>
+                        <NavLink to='/' className={(navData) => (navData.isActive ? "active-link nav-link" : 'nav-link')}>Home</NavLink>
                     </Col>
                     <Col>
                     <Journal className="icon"/>
                     <br/>
-                        <NavLink to='/journals' activeclassname='active-link' className="nav-link">Journal</NavLink>
+                        <NavLink to='/journals' className={(navData) => (navData.isActive ? "active-link nav-link" : 'nav-link')}>Journal</NavLink>
                     </Col>
                 </Row>
             </Container>
@@ -40,17 +41,17 @@ const NavBar = () => {
 
                             <Col className="col-2 offset-5 mt-4 selfcare-nav">
                                 <PersonHeart className="icon"/>
-                                <NavLink to='/selfcare' activeClassName='active-link' className='nav-link'>Self Care</NavLink>
+                                <NavLink to='/selfcare' className={(navData) => (navData.isActive ? "active-link nav-link" : 'nav-link')}>Self Care</NavLink>
                             </Col>
                             <Col className="col-2 mt-4 home-nav">
                                 <HouseDoorFill className='icon'/>
                                 <br/>
-                                <NavLink to='/' activeClassName='active-link' className="nav-link">Home</NavLink>
+                                <NavLink to='/' className={(navData) => (navData.isActive ? "active-link nav-link" : 'nav-link')}>Home</NavLink>
                             </Col>
                             <Col className="col-2 mt-4 journals-nav">
                                 <Journal className="icon"/>
                                 <br/>
-                                <NavLink to='/journals' activeClassName='active-link' className="nav-link">Journal</NavLink>
+                                <NavLink to='/journals' className={(navData) => (navData.isActive ? "active-link nav-link" : 'nav-link')}>Journal</NavLink>
 
                             </Col>
                     </Row>
