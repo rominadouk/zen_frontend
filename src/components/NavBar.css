@@ -6,13 +6,14 @@
     font-size: 30px;
 }
 
-.nav-link {
+/* .nav-link {
     text-decoration: none;
-}
+} */
 
 .active-link {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1.5px !important;
   }
   
 
