@@ -49,8 +49,8 @@ const Skincare = () => {
 
     //useEffect with two dependencies: will run 'randomizetip' or 'randomizeactivity' changes. Will then call randomizeTip or randomizeActivity functions; used to tigger random selections whenever component re-renders, making sure it's always up-to-date.
     useEffect(()=> {
-        randomizeTipAndActivity();
-    }, [randomizeTipAndActivity])
+        randomizeTipAndActivity()
+    }, [randomizeTipAndActivity]);
 
 
     

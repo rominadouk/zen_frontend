@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const AloneTime = () => {
-    const [soloActivity, setSoloActivity] = useState([])
+    const [soloActivity, setSoloActivity] = useState([]);
 
     const getActivity = () => {
         axios.get('https://www.boredapi.com/api/activity?participants=1').then((response) => {

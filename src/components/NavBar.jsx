@@ -17,17 +17,17 @@ const NavBar = () => {
                 <Row>
                     <Col>
                     <PersonHeart className="icon"/>
-                        <NavLink to='/selfcare' activeClassName='active-link' className='nav-link'>Self Care</NavLink>
+                        <NavLink to='/selfcare' activeclassname='active-link' className='nav-link'>Self Care</NavLink>
                     </Col>
                     <Col>
                     <HouseDoorFill className='icon'/>
                     <br/>
-                        <NavLink to='/' activeClassName='active-link' className="nav-link">Home</NavLink>
+                        <NavLink to='/' activeclassname='active-link' className="nav-link">Home</NavLink>
                     </Col>
                     <Col>
                     <Journal className="icon"/>
                     <br/>
-                        <NavLink to='/journals' activeClassName='active-link' className="nav-link">Journal</NavLink>
+                        <NavLink to='/journals' activeclassname='active-link' className="nav-link">Journal</NavLink>
                     </Col>
                 </Row>
             </Container>

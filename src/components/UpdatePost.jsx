@@ -18,7 +18,8 @@ const UpdatePost = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         handleUpdate(postData)
-    }
+    };
+    
     const handleUpdate = (editedPost) => {
         axios.put(`https://zen-backend-e3xl.onrender.com/updatepost/${id}`, editedPost)
             .then((response)=> {

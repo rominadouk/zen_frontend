@@ -19,20 +19,21 @@ const [newJournal, setNewJournal] = useState(emptyPost);
 
     const handleChange = (event) => {
         setNewJournal({...newJournal, [event.target.name]: event.target.value})
-    }
+    };
 
     const handleCreate = (newJournal) => {
         axios.post('https://zen-backend-e3xl.onrender.com/journals', newJournal).then((response)=> {
             console.log(response)
         });
-    }
-    const navigate = useNavigate()
+    };
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault()
         handleCreate(newJournal)
         navigate('/journals')
-    }
+    };
 
 
 

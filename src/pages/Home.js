@@ -41,18 +41,18 @@ const Home = () => {
         const addAngry = angryData + 1
         setAngryAmount(addAngry)
         setShowAngry(true)
-    }
+    };
 
     const updateSadAmount = () => {
         const addSad = sadData + 1
         setSadAmount(addSad)
         setShowSad(true)
-    }
+    };
 
 
     useEffect(()=> {
         getEmotions()
-    }, [])
+    }, []);
 
     return ( 
         <>

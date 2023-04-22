@@ -8,12 +8,12 @@ import AloneTime from "../components/AloneTime.jsx";
 const Selfcare = () => {
 
     const [selectedOption, setSelectedOption] = useState("");
-    const [dropdownTitle, setDropdownTitle] = useState("Choose One")
+    const [dropdownTitle, setDropdownTitle] = useState("Choose One");
 
     const handleSelect = (option) => {
         setSelectedOption(option)
         setDropdownTitle(option)
-    }
+    };
     
     return ( 
         <>

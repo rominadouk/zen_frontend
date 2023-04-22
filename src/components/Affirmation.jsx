@@ -4,7 +4,7 @@ import './Affirmation.css'
 
 
 const Affirmation = () => {
-    const [dailyaffirmation, setDailyAffirmation] = useState('')
+    const [dailyaffirmation, setDailyAffirmation] = useState('');
     const affirmations = useMemo(() =>  [
         "You got this",
         "You'll figure it out",
