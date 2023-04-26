@@ -40,7 +40,7 @@ A mental health app designed to help users visualize how they have been feeling 
 Process:
 This app is a single-page application designed using the MERN stack. MongoDB Atlas was used for the database, Express was used for the backend, React is used for the frontend. The backend is deployed separately on render and can be found on my github, the front is deployed on Heroku. I began identifying the purpose for this project and identified functionality according to project requirements. I built out the backend using Express and created models for the data I wanted. I pulled some data from third party API’s to generate content for the Self-Care page. After testing all routes with Postman I moved onto the frontend. I created wireframes based on a mobile-first design and built out my React interface using that. After I built out all elements and made the site functional I moved on to the desktop designs and built that using media queries and React-Bootstrap. After ensuring that I reached MVP I attempted to deploy on Heroku, then I built some extra features such as date formatting. 
 
-##Issues
+## Issues
 When deploying, a “webpack deprecated” error displays. *Will update
 User Authentication (could not Authenticate using JWT, will revisit Authentication with sessions).
 useEffect will sometimes throw a dependency error, error has been fixed for now.
@@ -56,7 +56,7 @@ Jokes will be moderated
 More personalization
 Exercises will be changed to more simple, yoga exercises. 
 
-##Installation Instructions (Fork this Repo)
+## Installation Instructions (Fork this Repo)
 Fork the Zen Backend and Zen Frontend repositories on GitHub.
 Clone the forked repositories to your local machine using Git.
 Navigate to the backend directory in your terminal and run npm install to install all the required dependencies.
