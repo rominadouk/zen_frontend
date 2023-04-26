@@ -58,6 +58,7 @@ Exercises will be changed to more simple, yoga exercises.
 
 ## Installation Instructions (Fork this Repo)
 Fork the Zen Backend and Zen Frontend repositories on GitHub.
+
 Clone the forked repositories to your local machine using Git.
 Navigate to the backend directory in your terminal and run npm install to install all the required dependencies.
 Create a .env file in the root directory of the backend and set the environment variable to access MongoDB Atlas. If you want to access the third-party API’s you will need to create an account and obtain your API key for https://api-ninjas.com/. The API https://www.boredapi.com/ does not require an API key. Hide all API keys in a .env file. 
