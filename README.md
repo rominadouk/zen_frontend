@@ -1,9 +1,9 @@
 # Zen
 Live Link: https://zen-frontend.herokuapp.com/
 
-This frontend is deployed on Heroku.
-The backend is deployed on Render and can be found on GitHub at: https://github.com/rominadouk/zen_backend
-This project was engineered and designed by Romina Douk. 
+Zen frontend is deployed on Heroku.
+Zen backend is deployed on Render and the code can be found on GitHub at: https://github.com/rominadouk/zen_backend
+This project was designed and built by Romina Douk. 
 
 ## Languages: 
 HTML, CSS, JavaScript, JSX
