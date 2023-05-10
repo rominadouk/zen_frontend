@@ -9,7 +9,7 @@ This project was engineered and designed by Romina Douk.
 HTML, CSS, JavaScript, JSX
 
 ## Technologies used: 
-MongoDB Atlas, Express JS, React JS, Node, React-Bootstrap, CORS, Axios, Mongoose, Moment, Postman, .env, third-party API’s
+MongoDB Atlas, Express JS, React JS, React-Bootstrap, CORS, Axios, Mongoose, Moment, third-party API’s
 
 ## Wireframes: 
 https://whimsical.com/project-zen-wireframes-AYjN7dz9nnstmyr9r9BxpY
